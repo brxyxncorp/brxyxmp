@@ -165,4 +165,4 @@ footer{height: 50px; padding: 10px 0; font-size: 12pt;}
 /*
 	RESPONSIVE LAYOUT
 */
-@media all and (){}
+@media all and (min-width: 1700px){}
