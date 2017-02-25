@@ -1,0 +1,18 @@
+<%= form_for @message, url: contact_path do |message_form| %>
+	<fieldset class="row">
+		<div class="col-12 field">
+			<%= message_form.text_field :name, placeholder: "Nombre" %>
+		</div>
+		<div class="col-12 field">
+			<%= message_form.email_field :email, placeholder: "Email" %>
+		</div>
+		<div class="col-12 field">
+			<%= message_form.text_area :content, placeholder: "Mensaje" %>
+		</div>
+	</fieldset>
+	<fieldset class="row">
+		<div class="col-12 field">
+			<%= message_form.submit "Enviar" %>
+		</div>
+	</fieldset>
+<% end %>

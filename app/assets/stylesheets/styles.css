@@ -33,13 +33,12 @@ ul.navitems{
 	padding: 0;
 	margin: 0;
 }
-ul.navitems li{
-	padding: 12px 0;
-}
+
 ul.navitems a.navitem{
 	text-decoration: none!important;
 	height: 100%;
 	color: #fff;
+	padding: 12px 0;
 }
 a.navitem:hover{
 	background-color: rgba(0,0,0,0.25);
@@ -50,7 +49,20 @@ a.navitem:hover{
 }
 .active{background-color: rgba(0,0,0,0.25);}
 
+/*
+	SECTIONS
+*/
+/*---BRAND MAIN---*/
+.brand{width: 100%;}
+
+
+
+
+
+
+
 /*---TEXT-FORMAT---*/
+h1{font-size: 42.6667px;}
 article{
 	background-color: #fff;
 	box-sizing: border-box;

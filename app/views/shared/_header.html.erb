@@ -9,7 +9,7 @@
 		<a href="" class="navitem col">
 			<li>Cursos</li>
 		</a>
-		<a href="" class="navitem col">
+		<a href="<%= contact_path %>" class="navitem col">
 			<li>Tutoriales</li>
 		</a>
 		<a href="<%= price_path %>" class="navitem col">
@@ -18,5 +18,14 @@
 		<a href="" class="navitem col">
 			<li>Blog</li>
 		</a>
+		<% if current_user %>
+		<a href="<%= destroy_user_session_path %>" class="navitem col" data-method="delete">
+			<li>Salir</li>
+		</a>
+		<% else %>
+		<a href="<%= new_user_session_path %>" class="navitem col">
+			<li>Entrar</li>
+		</a>
+		<% end %>
 	</ul>
 </nav>

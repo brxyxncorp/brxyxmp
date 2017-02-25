@@ -1,0 +1,28 @@
+<h1>Installing Ruby on Rails 5 on Ubuntu</h1>
+<p>
+	Everytime that we want install ruby on rails on Ubuntu, we need 3 componentes:
+</p>
+<ul>
+	<li>Ruby</li>
+	<li>Rails</li>
+	<li>NodeJs (npm)</li>
+</ul>
+
+<h3>Installing Ruby &amp; Rails</h3>
+<p>
+	Then, in our console/shell or terminal need write the follow code:
+</p>
+
+<code>gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113<wbr>804BB82D39DC0E3</wbr></code>
+<pre>\curl -sSL https://get.rvm.io | bash -s stable --rails</pre>
+<p>If you want do an independent install then, change "--rails" for --ruby or --ruby=#.#.#</p>
+
+<h3>Installing Node.Js</h3>
+<p>
+	This is necessary only for components of JavaScript:
+</p>
+<pre>sudo apt-get update</pre>
+<pre>sudo apt-get install nodejs</pre>
+<p>The next step is install npm if you needed</p>
+<pre>sudo apt-get install npm</pre>
+<p>Ready! Hack it!</p>

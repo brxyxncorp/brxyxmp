@@ -14,6 +14,14 @@
   		<header class="row">
   			<%= render 'shared/header'%>
   		</header>
+      <div class="alerts">
+        <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %> alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <%= value %>
+          </div>
+        <% end %>
+      </div>
   		<div class="row">
 	    	<%= yield %>
   		</div>
