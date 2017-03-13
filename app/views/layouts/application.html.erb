@@ -14,20 +14,43 @@
   		<header class="row">
   			<%= render 'shared/header'%>
   		</header>
-      <div class="alerts">
-        <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %> alert-dismissable">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-            <%= value %>
-          </div>
-        <% end %>
+
+      <div id="alerts" class="popup-box">
+        <%= render "shared/flashes" %>
       </div>
+
   		<div class="row">
 	    	<%= yield %>
   		</div>
+      
     	<footer class="row">
     		<%= render "shared/footer" %>
     	</footer>
     </main>
+
+
+    <script>
+      $(document).ready(function(){
+        //    Working
+        //-Close alerts box
+        $("#close").click(function(){
+          $("#alerts").fadeOut("slow");
+        });
+        //    End Working
+
+        //    No Working
+        function showAlerts() {
+          var popup = $('#alerts');
+          popup.addClass("show");
+        }
+        $('#xd').fadeOut(3000);
+        function popup(){
+          if($.trim($('#alerts')).text != ""){
+            //code
+          }
+        }
+        //    End No Working
+      });
+    </script>
   </body>
 </html>

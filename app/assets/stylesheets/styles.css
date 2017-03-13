@@ -49,6 +49,41 @@ a.navitem:hover{
 }
 .active{background-color: rgba(0,0,0,0.25);}
 
+
+/*---ALERTS---*/
+#alerts{
+}
+.alert{
+	position: absolute;
+	width: 350px;
+	background-color: #111;
+	float: right;
+	top: 70px;
+	right: 10px;
+	padding: 10px 15px;
+}
+.alert.alert-success, .alert-notice{color:#4F8A10;background-color:#DFF2BF;}
+.alert.alert-info{color: #00529B;background-color: #BDE5F8;}
+.alert.alert-warning{color: #9F6000;background-color: #FEEFB3;}
+.alert.alert-error{color: #D8000C;background-color: #FFBABA;}
+
+
+#close{
+	float: right;
+	top: 3;
+	right: 3;
+	background-color:rgba(0,0,0,0.5);
+	border: none;
+	color: white;
+	border-radius: 12.5px;
+	cursor: pointer;
+	font-size: 16pt;
+	width: 25px; height: 25px;
+}
+#close:hover{color: #111;
+	background-color: rgba(255,255,255,0.8);
+}
+
 /*
 	SECTIONS
 */
