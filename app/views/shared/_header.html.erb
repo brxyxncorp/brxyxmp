@@ -1,31 +1,23 @@
-<nav id="menu">
-	<ul class="row navitems">
-		<a href="<%= root_path %>" class="navitem col brand">
-			<li>Conected</li>
-		</a>
-		<a href="<%= root_path %>" class="navitem col active">
-			<li>Home</li>
-		</a>
-		<a href="" class="navitem col">
-			<li>Cursos</li>
-		</a>
-		<a href="<%= contact_path %>" class="navitem col">
-			<li>Tutoriales</li>
-		</a>
-		<a href="<%= price_path %>" class="navitem col">
-			<li>Precios</li>
-		</a>
-		<a href="" class="navitem col">
-			<li>Blog</li>
-		</a>
-		<% if current_user %>
-		<a href="<%= destroy_user_session_path %>" class="navitem col" data-method="delete">
-			<li>Salir</li>
-		</a>
-		<% else %>
-		<a href="<%= new_user_session_path %>" class="navitem col">
-			<li>Entrar</li>
-		</a>
-		<% end %>
-	</ul>
-</nav>
+<% path = request.fullpath.split('/') %>
+<% path2 = [root_path.split("/"), blog_path.split('/'), contact_path.split('/')] %>
+
+<header class="row">
+	<nav class="navbar">
+		<div class="flex menu outer-shadow">
+			<a href="<%= root_path %>" class="flex-col brand">conected</a>
+			<a href="<%= root_path %>" class="flex-col <% if path[1] == path2[0][0] %><%= "active" %><% end %>">inicio</a>
+			<a href="<%= blog_path %>" class="flex-col <% if path[1] == path2[1][1] %><%= "active" %><% end %>">blog</a>
+			<a href="" class="flex-col">cursos</a>
+			<a href="" class="flex-col">precios</a>
+
+			<% if current_user %>
+				<% if current_user.username %>
+					<%= link_to current_user.username,edit_user_registration_path, :class => 'flex-col' %>
+				<% end %>
+				<a href="<%= destroy_user_session_path %>" class="flex-col">Salir</a>
+			<% else %>
+				<a href="<%= new_user_session_path %>" class="flex-col">Entrar</a>
+			<% end %>
+		</div>
+	</nav>
+</header>

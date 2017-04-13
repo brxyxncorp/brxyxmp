@@ -3,4 +3,8 @@ class StaticPagesController < ApplicationController
 	end
 	def price
 	end
+	def blog
+	end
+	def contact
+	end
 end

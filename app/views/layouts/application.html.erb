@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Brxyxmp</title>
+<head>
+<title>Brxyxmp</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
+</head>
 
-  <body>
-  	<main class="container">
-  		<header class="row">
-  			<%= render 'shared/header'%>
-  		</header>
+<body>
+<div class="container-fluid box">
+    <%= render 'shared/header'%>
+</div>
 
-      <div id="alerts" class="popup-box">
-        <%= render "shared/flashes" %>
-      </div>
+<div id="alerts" class="popup-box">
+    <%= render "shared/flashes" %>
+</div>
 
-  		<div class="row">
-	    	<%= yield %>
-  		</div>
-      
-    	<footer class="row">
-    		<%= render "shared/footer" %>
-    	</footer>
-    </main>
+<% if request.original_url == root_url %>
+    <%= render "shared/slider" %>
+<% end %>
+<main class="container-flex box">
+        <%= yield %>
+    <span>&nbsp;</span>
+</main>
 
+<footer class="container-fluid box outer-shadow">
+    <%= render "shared/footer" %>
+</footer>
 
-    <script>
-      $(document).ready(function(){
-        //    Working
-        //-Close alerts box
-        $("#close").click(function(){
-          $("#alerts").fadeOut("slow");
-        });
-        //    End Working
+<script>
+$(document).ready(function(){
+//    Working
+//-Close alerts box
+$("#close").click(function(){
+$("#alerts").delay(800).fadeOut(400);
+});
+//    End Working
 
-        //    No Working
-        function showAlerts() {
-          var popup = $('#alerts');
-          popup.addClass("show");
-        }
-        $('#xd').fadeOut(3000);
-        function popup(){
-          if($.trim($('#alerts')).text != ""){
-            //code
-          }
-        }
-        //    End No Working
-      });
-    </script>
-  </body>
+//    No Working
+function showAlerts() {
+var popup = $('#alerts');
+popup.addClass("show");
+}
+$('#xd').fadeOut(3000);
+function popup(){
+if($.trim($('#alerts')).text != ""){
+//code
+}
+}
+//    End No Working
+});
+</script>
+</body>
 </html>

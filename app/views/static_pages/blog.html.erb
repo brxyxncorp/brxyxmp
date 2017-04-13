@@ -1,0 +1,34 @@
+<%= render 'shared/search' %>
+<!-- CICLO DE DEMOSTRACIÓN -->
+<%
+	inicio = 1;
+	final = 5;
+%>
+<span>&nbsp;</span>
+<section class="">
+<h1 class="site-title">Blog posts</h1>
+<% for i in inicio..final %>
+	<article class="container-circle inner-shadow">
+		<div class="circle-top">
+			<div class="circle-off-top">
+				<a href="" class="svg-content">
+					<span>
+						<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 24 24"><path d="M17 3H7c-1.1 0-1.99.9-1.99 2L5 21l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15l-5-2.18L7 18V5h10v13z"/></svg>
+					</span>
+				</a>
+			</div>
+		</div>
+
+		<div class="post-meta">
+			<span>Posted on <time>09/04/2017</time> by <strong>author</strong></span>
+		</div>
+		<h2 class="post-title">Header Post</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia vel quasi aperiam facere ducimus magnam iusto numquam accusamus, voluptas, vitae ipsam harum distinctio enim neque veniam assumenda quaerat in totam!</p>
+		<div class="circle-bottom">
+			<a href="">➜</a>
+			<div class="circle-off-bot"></div>
+		</div>
+	</article>
+<%end%>
+
+</section>
