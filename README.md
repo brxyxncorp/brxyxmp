@@ -1,11 +1,10 @@
-# README
+# BRXYXMP Website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application for conect.ed.gt (Conected) and here is all the system in Ruby on Rails 5
 
-Things you may want to cover:
+The follow lines describe the configuration of the environment [in process...]
 
-* Ruby version
+* Ruby > 2.3
 
 * System dependencies
 
@@ -21,4 +20,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...

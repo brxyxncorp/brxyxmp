@@ -13,6 +13,10 @@
 			<% if current_user %>
 				<% if current_user.username %>
 					<%= link_to current_user.username,edit_user_registration_path, :class => 'flex-col' %>
+				<% elsif current_user.name %>
+					<%= link_to name,edit_user_registration_path, :class => 'flex-col' %>
+				<% else %>
+					<%= link_to 'Editar perfil',edit_user_registration_path, :class => 'flex-col' %>
 				<% end %>
 				<a href="<%= destroy_user_session_path %>" class="flex-col">Salir</a>
 			<% else %>

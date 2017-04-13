@@ -26,3 +26,49 @@
 <p>The next step is install npm if you needed</p>
 <pre>sudo apt-get install npm</pre>
 <p>Ready! Hack it!</p>
+
+GITHUB
+echo "# testempty" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:brxyxncorp/testempty.git
+git push -u origin master
+
+HEROKU
+Create new App random from git
+	heroku create
+Verify the remote in my git
+	git remote -v
+Add new heroku remote in git configuration
+	heroku git:remote -a
+
+DEPLOYING MODE
+	git push heroku master
+		or
+	git push heroku yourbranch:master
+
+
+ME INSTALLING PAPERCLIP IN GEMFILE
+In Gemfile
+	gem "paperclip", "~> 5.0.0"
+
+Last of 'bundle install'
+	##################################################
+	#  NOTE FOR UPGRADING FROM 4.3.0 OR EARLIER       #
+	##################################################
+
+	Paperclip is now compatible with aws-sdk >= 2.0.0.
+
+	If you are using S3 storage, aws-sdk >= 2.0.0 requires you to make a few small
+	changes:
+
+	* You must set the `s3_region`
+	* If you are explicitly setting permissions anywhere, such as in an initializer,
+	  note that the format of the permissions changed from using an underscore to
+	  using a hyphen. For example, `:public_read` needs to be changed to
+	  `public-read`.
+
+	For a walkthrough of upgrading from 4 to 5 and aws-sdk >= 2.0 you can watch
+	http://rubythursday.com/episodes/ruby-snack-27-upgrade-paperclip-and-aws-sdk-in-prep-for-rails-5
+
