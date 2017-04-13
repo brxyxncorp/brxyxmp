@@ -46,6 +46,8 @@ Add new heroku remote in git configuration
 DEPLOYING MODE
 	git push heroku master
 		or
+	git push -f heroku
+		or
 	git push heroku yourbranch:master
 
 

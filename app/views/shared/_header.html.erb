@@ -8,16 +8,17 @@
 			<a href="<%= root_path %>" class="flex-col <% if path[1] == path2[0][0] %><%= "active" %><% end %>">inicio</a>
 			<a href="<%= blog_path %>" class="flex-col <% if path[1] == path2[1][1] %><%= "active" %><% end %>">blog</a>
 			<a href="" class="flex-col">cursos</a>
-			<a href="" class="flex-col">precios</a>
 
 			<% if current_user %>
-				<% if current_user.username %>
-					<%= link_to current_user.username,edit_user_registration_path, :class => 'flex-col' %>
-				<% elsif current_user.name %>
-					<%= link_to name,edit_user_registration_path, :class => 'flex-col' %>
-				<% else %>
-					<%= link_to 'Editar perfil',edit_user_registration_path, :class => 'flex-col' %>
-				<% end %>
+				<a href="<%= edit_user_registration_path %>" class="flex-col" style="display: flex; align-items: center;"><%= image_tag(current_user.avatar.url(:thumb), :style => "max-width:50px;border-radius: 50%;") %>
+					<% if current_user.username %>
+					<span style="padding: 0 5px;"><%= current_user.username %></span></%>
+					<% elsif current_user.fullname %>
+						<span style="padding: 0 5px;"><%= current_user.fullname %></span>
+					<% else %>
+						<span style="padding: 0 5px;">Editar Perfil</span>
+					<% end %>
+				</a>
 				<a href="<%= destroy_user_session_path %>" class="flex-col">Salir</a>
 			<% else %>
 				<a href="<%= new_user_session_path %>" class="flex-col">Entrar</a>
