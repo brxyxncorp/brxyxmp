@@ -8,8 +8,8 @@ Rails.application.configure do
     domain: "brxyxmp.herokuapp.com",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "brxyxmp@gmail.com",
-    password: "#brxyxn1"
+    user_name: ENV["EMAIL_USER"],
+    password: ENV["EMAIL_PASSWORD"]
   }
 
   # Settings specified here will take precedence over those in config/application.rb.

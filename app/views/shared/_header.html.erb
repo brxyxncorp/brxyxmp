@@ -11,12 +11,14 @@
 
 			<% if current_user %>
 				<a href="<%= edit_user_registration_path %>" class="flex-col" style="display: flex; align-items: center;"><%= image_tag(current_user.avatar.url(:thumb), :style => "max-width:50px;border-radius: 50%;") %>
-					<% if current_user.username %>
-					<span style="padding: 0 5px;"><%= current_user.username %></span></%>
-					<% elsif current_user.fullname %>
-						<span style="padding: 0 5px;"><%= current_user.fullname %></span>
+					<% if !current_user.username.blank? %>
+						<span style="padding: 0 5px;"><%= current_user.username %></span></%>
 					<% else %>
-						<span style="padding: 0 5px;">Editar Perfil</span>
+						<% if !current_user.fullname.blank? %>
+							<span style="padding: 0 5px;"><%= current_user.fullname.truncate_words(1).remove!("...") %></span></%>
+						<% else %>
+							<span style="padding: 0 5px;">Perfil</span>
+						<% end %>
 					<% end %>
 				</a>
 				<a href="<%= destroy_user_session_path %>" class="flex-col">Salir</a>
