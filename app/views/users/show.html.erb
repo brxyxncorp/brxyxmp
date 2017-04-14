@@ -1,0 +1,15 @@
+<br>
+<div class="container">
+	<div class="row user">
+		<div class="col-12 head">
+			<%= image_tag @user.avatar.url(:medium) %>
+			<h1><%= @user.fullname %></h1>
+		</div>
+		<div class="col-12 content">
+			<%= content_tag(:div, ("Nombre: " + @user.fullname), class: "col-12") unless @user.fullname.blank? %>
+			<%= content_tag(:div, ("Usuario: " + @user.username), class: "col-12") unless @user.username.blank? %>
+			<%= content_tag(:div, ("Fecha de nacimiento: " + @user.date_of_birth)) unless @user.date_of_birth.blank? %>
+			<%= content_tag(:div, ("Edad: " + distance_of_time_in_words(Time.now, @user.date_of_birth) + " años"), class: "col-12") unless @user.date_of_birth.blank? %>
+		</div>
+	</div>
+</div>

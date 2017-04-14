@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 	devise_for :users
+	resources :users, only: [:index, :show]
 	devise_scope :user do
 		get '/users/sign_out' => 'devise/sessions#destroy'
 	end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	root 'static_pages#home'
 	get '/about/', :to => 'static_pages#about'

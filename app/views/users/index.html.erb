@@ -1,0 +1,16 @@
+<div class="container">
+	<div class="row users">
+		<% @users.each do |user| %>
+			<div class="user-box">
+				<div class="avatar">
+					<a href="<%= user_path(user) %>">
+						<%= image_tag user.avatar.url(:medium) %>
+					</a>
+				</div>
+				<div class="description">
+					<%= link_to user.fullname, user_path(user), class: 'user-fullname' %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

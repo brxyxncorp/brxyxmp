@@ -1,5 +1,5 @@
 <% path = request.fullpath.split('/') %>
-<% path2 = [root_path.split("/"), blog_path.split('/'), contact_path.split('/')] %>
+<% path2 = [root_path.split("/"), blog_path.split('/'), users_path.split("/")] %>
 
 <header class="row">
 	<nav class="navbar">
@@ -7,19 +7,12 @@
 			<a href="<%= root_path %>" class="flex-col brand">conected</a>
 			<a href="<%= root_path %>" class="flex-col <% if path[1] == path2[0][0] %><%= "active" %><% end %>">inicio</a>
 			<a href="<%= blog_path %>" class="flex-col <% if path[1] == path2[1][1] %><%= "active" %><% end %>">blog</a>
-			<a href="" class="flex-col">cursos</a>
+			<a href="<%= users_path %>" class="flex-col <% if path[1] == path2[2][1] %><%= "active" %><% end %>">usuarios</a>
 
 			<% if current_user %>
 				<a href="<%= edit_user_registration_path %>" class="flex-col" style="display: flex; align-items: center;"><%= image_tag(current_user.avatar.url(:thumb), :style => "max-width:50px;border-radius: 50%;") %>
-					<% if !current_user.username.blank? %>
-						<span style="padding: 0 5px;"><%= current_user.username %></span></%>
-					<% else %>
-						<% if !current_user.fullname.blank? %>
-							<span style="padding: 0 5px;"><%= current_user.fullname.truncate_words(1).remove!("...") %></span></%>
-						<% else %>
-							<span style="padding: 0 5px;">Perfil</span>
-						<% end %>
-					<% end %>
+					<span> <%= current_user.full_name %> </span>
+					
 				</a>
 				<a href="<%= destroy_user_session_path %>" class="flex-col">Salir</a>
 			<% else %>

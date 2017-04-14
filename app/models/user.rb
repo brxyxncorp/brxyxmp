@@ -23,4 +23,14 @@ class User < ApplicationRecord
 		fog_directory: ENV["FOG_DIRECTORY"]
 	validates_attachment :avatar,
 						content_type: { content_type: ["image/jpeg", "image/gif", "image/png"]}
+
+	def full_name
+		if !self.username.blank?
+			self.username
+		elsif !self.fullname.blank?
+			self.fullname.truncate_words(1).remove('...')
+		else
+			self.email
+		end
+	end					
 end
