@@ -1,0 +1,6 @@
+<h1>Edit post</h1>
+
+<p><%= link_to 'Regresar', post_path(@post) %></p>
+<%= render 'form', post: @post %>
+
+<p><%= link_to 'Eliminar post', @post, method: :delete, data: {confirm: "Are you sure you want to delete this permanently?"} %></p>

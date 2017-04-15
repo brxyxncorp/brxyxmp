@@ -1,15 +1,12 @@
 class User < ApplicationRecord
-# Include default devise modules. Others available are:
-# :confirmable, :lockable, :timeoutable and :omniauthable
+	has_many :posts , dependent: :destroy
 
-# Header is: class User < ApplicationRecord::Base
-# In the tutorial isset: class User < ActiveRecord::Base
-# But here is without '::Base'... Take in count later
+	# Include default devise modules. Others available are:
+	# :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
 		   :recoverable, :rememberable, :trackable, :validatable
 
 #	has_attached_file :avatar, styles: { large: "500x500>", medium: "300x300>", thumb: "50x50#"}, default_url: "/images/:style/npp.png"
-	
 	has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100#" },
 		default_url: "/images/:style/npp.png",
 		url: ":s3_domain_url",
@@ -32,5 +29,5 @@ class User < ApplicationRecord
 		else
 			self.email
 		end
-	end					
+	end
 end

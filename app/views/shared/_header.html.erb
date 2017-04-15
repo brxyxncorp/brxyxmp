@@ -1,12 +1,12 @@
 <% path = request.fullpath.split('/') %>
-<% path2 = [root_path.split("/"), blog_path.split('/'), users_path.split("/")] %>
+<% path2 = [root_path.split("/"), posts_path.split('/'), users_path.split("/")] %>
 
 <header class="row">
 	<nav class="navbar">
 		<div class="flex menu outer-shadow">
 			<a href="<%= root_path %>" class="flex-col brand">conected</a>
 			<a href="<%= root_path %>" class="flex-col <% if path[1] == path2[0][0] %><%= "active" %><% end %>">inicio</a>
-			<a href="<%= blog_path %>" class="flex-col <% if path[1] == path2[1][1] %><%= "active" %><% end %>">blog</a>
+			<a href="<%= posts_path %>" class="flex-col <% if path[1] == path2[1][1] %><%= "active" %><% end %>">blog</a>
 			<a href="<%= users_path %>" class="flex-col <% if path[1] == path2[2][1] %><%= "active" %><% end %>">usuarios</a>
 
 			<% if current_user %>
@@ -14,7 +14,7 @@
 					<span> <%= current_user.full_name %> </span>
 					
 				</a>
-				<a href="<%= destroy_user_session_path %>" class="flex-col">Salir</a>
+				<a href="<%= logout_path %>" class="flex-col">Salir</a>
 			<% else %>
 				<a href="<%= new_user_session_path %>" class="flex-col">Entrar</a>
 			<% end %>

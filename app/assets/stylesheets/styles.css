@@ -346,9 +346,9 @@ article.container-circle{
 	text-align: center;
 }
 .circle-off-bot, .circle-off-top{background: #f3f3f3;color:#333;}
-.container-circle a{color: white;text-decoration: none;}
+.container-circle a{color: #1BA39C;text-decoration: none;}
 .circle-bottom a{
-	color: #217593;
+	color: #1BA39C;
 	font-size: 45px;
 	position: absolute;
 	z-index: 1;
@@ -359,7 +359,7 @@ article.container-circle{
 	height: 100%;
 	text-align: center;
 }
-.container-circle a:hover{text-shadow: 1px 1px 2px rgba(0,0,0,0.4);color:#1BA39C;}
+.container-circle a:hover{text-shadow: 1px 1px 2px rgba(0,0,0,0.4);color:#217593;}
 .svg-content{width: 28px;display:inline-flex;}
 .svg-content svg{fill: #333;}
 
@@ -701,7 +701,4 @@ input.input-text{
 .centered-box{margin: 0 auto;}
 .centered-items{align-items: center;text-align: center;}
 
-
-
-
-.col-6{}
+.pull-right{position: absolute;right: 0;}
