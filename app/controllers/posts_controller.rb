@@ -57,9 +57,12 @@ class PostsController < ApplicationController
 	end
 
 	private
-		def allowed_params
-			# t.string   "title" "body" "name" "excerpt" "status" "comment_status" "comment_count" "post_type"
-			params.require(:post).permit(:title, :body, :name, :excerpt, :status, :comment_status, :comment_count, :post_type)
-		end
+	def allowed_params
+		# t.string   "title" "body" "name" "excerpt" "status" "comment_status" "comment_count" "post_type"
+		params.require(:post).permit(:title, :body, :name, :excerpt, :status, :comment_status, :comment_count, :post_type)
+	end
 
+	def find_post
+		@post = Post.find(params[:id])
+	end
 end
