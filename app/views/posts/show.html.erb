@@ -1,12 +1,12 @@
-<br>
-<br>
-<span><time datetime="<%= @post.created_at %>"><%= @post.created_at.strftime("%B %d, %Y") %></time> por <strong>
-<a href="<%= "#{users_path}/#{@post.user.id} " %>"><%= @post.user.fullname %></a>
-</strong>
+<div class="br-post">
+	<span><time datetime="<%= @post.created_at %>"><%= @post.created_at.strftime("%B %d, %Y") %></time> por <strong>
+	<a href="<%= "#{users_path}/#{@post.user.id} " %>"><%= @post.user.fullname %></a>
+	</strong>
 
-<% if @post.user == current_user %>
-	<small><%= link_to 'editar', edit_post_path(@post) %></small>
-<% end %>
-</span>
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+	<% if @post.user == current_user %>
+		<small><%= link_to 'editar', edit_post_path(@post) %></small>
+	<% end %>
+	</span>
+	<h1><%= @post.title.html_safe() %></h1>
+	<div class="sumary"><%= @post.body.html_safe() %></div>
+</div>

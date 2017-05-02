@@ -224,6 +224,16 @@ article p{
 	text-rendering: optimizeLegibility;
 	color: #2c2c2d;
 }
+
+/* Users */
+.users, .user{
+	padding: 50px;
+}
+.img-circle{
+	border-radius: 50%;
+}
+/* End Users */
+
 /* Section > Article*/
 
 /* Aside */
@@ -370,6 +380,15 @@ svg{fill: white;}
 
 
 /* Posts Design */
+/* New Post */
+.br-post{
+	padding: 50px;
+}
+.sumary{
+	text-align: justify;
+}
+/* End New Post */
+
 /* Header */
 .title{margin: 0;padding:40px;background: #E5F0F7;}
 .title h2{font-size: 2em;font-weight: 300;text-align: center;}
@@ -386,6 +405,7 @@ hr{
 /* Margin between header and section|aside */
 .margin-20{width: 100%; height:25px;margin: 0;content:"&nbsp;";}
 /* Section > Article*/
+
 
 /* Aside */
 aside .heading-box{

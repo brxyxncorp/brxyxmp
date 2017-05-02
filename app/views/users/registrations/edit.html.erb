@@ -3,24 +3,26 @@
 		<h2>Edit <%= resource_name.to_s.humanize %></h2>
 	</div>
 	<div class="col-6 row center">
-
+			<div class="col-12 center">
+				<%= image_tag @user.avatar.url(:medium), class: 'img-circle' %>
+			</div>
 		<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 		<%= devise_error_messages! %>
 
 			<div class="col-12 center">
-				<%= f.label :avatar %> <br>
-				<%= f.file_field :avatar, class: '' %> <br>
+				<%= f.label :avatar, 'Imagen de perfil' %> <br>
+				<%= f.file_field :avatar, accept: 'image/png,image/gif,image/jpeg', :multiple => false %> <br>
 			</div>
 			<div class="col-12 center">
-				<%= f.label :Nombre %><br />
+				<%= f.label :fullname, 'Nombre completo' %><br />
 				<%= f.text_field :fullname, autofocus: true, :class => "input-text" %> <br>
 			</div>
 			<div class="col-12 center">
-				<%= f.label :Usuario %><br />
+				<%= f.label :username, 'Usuario' %><br />
 				<%= f.text_field :username, autofocus: true, :class => "input-text" %> <br>
 			</div>
 			<div class="col-12 center">
-				<%= f.label :email %><br />
+				<%= f.label :email, 'Correo Electrónico' %><br />
 				<%= f.email_field :email, autofocus: true, :class => "input-text" %> <br>
 			</div>
 
@@ -28,18 +30,10 @@
 				<div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div> <br>
 			<% end %>
 
-			<div class="col-12 center">
-				<%= f.label :password %><br />
-				<%= f.password_field :password, autocomplete: "off", :class => "input-text" %> <br>
-			</div>
-
-			<div class="col-12 center">
-				<%= f.label :password_confirmation %><br />
-				<%= f.password_field :password_confirmation, autocomplete: "off", :class => "input-text" %>
-			</div>
-
 			<div class="col-6 center">
-				<%= f.submit "Update", :class => 'btn btn-primary' %>
+				<hr>
+				<%= f.submit "Actualizar", :class => 'btn btn-primary' %>
+				<hr>
 			</div>
 		<% end %>
 
@@ -47,12 +41,12 @@
 
 	<div class="col-6 row center">
 		<div class="col-12 center">
-			<h3>Cancel my account</h3>
-			<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+			<h3>Eliminar cuenta</h3>
+			<p><%= button_to "Eliminar", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-error' %></p>
 		</div>
 
 		<div class="col-12 center">
-			<%= link_to "Back", :back %>
+			<%= link_to "Regresar", :back %>
 		</div>
 	</div>
 </div>

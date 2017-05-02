@@ -1,9 +1,11 @@
 <%= render 'shared/search' %>
-
+<br>
 <section>
 <h1 class="site-title">Blog posts</h1>
 
-<span style="font-size: 1.5em; display:block;position: relative;width: 100%;min-height: 25px;"><%= link_to 'Nuevo post', new_post_path, class: 'pull-right' %></span>
+<% if current_user %>
+	<span style="font-size: 1.5em; display:block;position: relative;width: 100%;min-height: 25px;"><%= link_to 'Nuevo post', new_post_path, class: 'pull-right' %></span>
+<% end %>
 
 <% @posts.each do |p| %>
 	<article class="container-circle inner-shadow">
@@ -25,7 +27,7 @@
 		</div>
 
 		<h2 class="post-title"><%= p.title %></h2>
-		<p><%= p.body %></p>
+		<div class="sumary"><%= p.body.html_safe() %></div>
 
 		<div class="circle-bottom">
 			<a href=""><%= link_to '➜', post_path(p.id) %></a>
