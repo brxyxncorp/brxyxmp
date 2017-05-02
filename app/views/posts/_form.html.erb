@@ -2,12 +2,12 @@
 <%= form_for post do |f| %>
 	<div class="form-group">
 		<%= f.label :title, 'Titulo', class: '' %><br>
-		<%= f.text_field :title, class: 'input-text' %>
+		<%= f.text_field :title, class: 'input-text', :style => "width:100%;" %>
 	</div>
-
+	<br>
 	<div class="form-group">
-		<%= f.label :body, 'Contenido', class: '' %><br>
-		<%= f.text_area :body, class: '', rows: 6 %>
+		<%= f.label :body, 'Contenido' %><br>
+		<%= f.text_area :body, rows: 6, :style => "visibility:hidden;opacity:0;" %>
 	</div>
 	
 	<br><br>

@@ -2,33 +2,36 @@
 <html>
 <head>
 <title>Brxyxmp</title>
-    <%= csrf_meta_tags %>
+	<%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		tinymce.remove();
+		tinymce.init({ selector:'textarea' });
+	</script>
 </head>
 
 <body>
 <div class="container-fluid box">
-    <%= render 'shared/header'%>
+	<%= render 'shared/header'%>
 </div>
 
 <div id="alerts" class="popup-box">
-    <%= render "shared/flashes" %>
+	<%= render "shared/flashes" %>
 </div>
 
 <% if request.original_url == root_url %>
-    <%= render "shared/slider" %>
+	<%= render "shared/slider" %>
 <% end %>
 <main class="container-flex box">
-        <%= yield %>
-    <span>&nbsp;</span>
+		<%= yield %>
+	<span>&nbsp;</span>
 </main>
 
 <footer class="container-fluid box outer-shadow">
-    <%= render "shared/footer" %>
+	<%= render "shared/footer" %>
 </footer>
 
 <script>
