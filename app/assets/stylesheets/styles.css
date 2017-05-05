@@ -382,11 +382,14 @@ svg{fill: white;}
 /* Posts Design */
 /* New Post */
 .br-post{
+	margin: auto;
 	padding: 50px;
+	max-width: 1000px;
 }
 .sumary{
 	text-align: justify;
 }
+img{max-width: 100%;}
 /* End New Post */
 
 /* Header */
