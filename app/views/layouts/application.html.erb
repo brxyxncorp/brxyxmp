@@ -38,7 +38,7 @@
 		$("#close").click(function(){
 			$("#alerts").delay(800).fadeOut(400);
 		});
-
+		tinymce.remove();
 		tinymce.init({
 			selector: 'textarea#post_body',
 			language: 'es',
