@@ -11,9 +11,28 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery3
-
 //= require jquery_ujs
+//= require tinymce
 //= require turbolinks
 //= require_tree .
 
+$.turbo.use('turbolinks:load', 'turbolinks:request-start');
+
+var resetForms = function () {
+  // this depends on your use
+  // this is for foundation 6's abide
+  $('form').each(function () {
+    $(this).foundation('destroy');
+  });
+};
+
+document.addEventListener("turbolinks:before-cache", function() {
+  resetForms();
+});
+
+document.addEventListener('turbolinks:request-start', function(){
+
+});
+document.addEventListener('turbolinks:load', function(){
+
+});

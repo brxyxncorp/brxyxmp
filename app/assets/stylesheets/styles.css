@@ -725,3 +725,5 @@ input.input-text{
 .centered-items{align-items: center;text-align: center;}
 
 .pull-right{position: absolute;right: 0;}
+
+.mce-branding-powered-by{display: none;}

@@ -40,3 +40,6 @@ gem 'paperclip', '~> 5.0.0'
 gem 'aws-sdk', '~> 2.3.0'
 gem 'fog'
 gem 'figaro'
+
+gem 'tinymce-rails', '~> 4.6'
+gem 'tinymce-rails-langs', '~> 4.20160310'

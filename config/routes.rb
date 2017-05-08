@@ -8,12 +8,10 @@ Rails.application.routes.draw do
 		get 'user/edit', to: "registrations#edit", as: "edit_user"
 	end
 
-	resources :posts, path: '/post/'
+	resources :posts, path: '/posts/'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 	root 'static_pages#home'
-
-	get '/blogs/', :to => 'static_pages#post'
 
 	get 'contact', to: 'messages#new', as: 'contact'
 	post 'contact', to: 'messages#create'
